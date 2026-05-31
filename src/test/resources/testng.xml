@@ -1,0 +1,60 @@
+<!DOCTYPE suite SYSTEM
+        "https://testng.org/testng-1.0.dtd">
+
+<suite name="Notes Automation Suite"
+       parallel="classes"
+       thread-count="3">
+
+    <listeners>
+
+        <listener
+                class-name=
+                        "listeners.TestListener"/>
+
+    </listeners>
+
+    <!-- UI TESTS -->
+
+    <test name="UI Tests">
+
+        <classes>
+
+            <class name="tests.LoginTest"/>
+
+            <class name="tests.CreateNoteTest"/>
+
+            <class name="tests.NegativeTest"/>
+
+            <class name="tests.DeleteNoteTest"/>
+
+            <class name="tests.PerformanceTest"/>
+
+        </classes>
+
+    </test>
+
+    <!-- API TESTS -->
+
+    <test name="API Tests">
+
+        <classes>
+
+            <class name="tests.NotesApiTest"/>
+
+        </classes>
+
+    </test>
+
+    <!-- HYBRID TESTS -->
+
+    <test name="Hybrid Tests">
+
+        <classes>
+
+            <class name="tests.HybridE2ETest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
