@@ -43,7 +43,7 @@ pipeline {
 
             steps {
 
-                bat '"C:\\allure\\bin\\allure.bat" generate allure-results --clean -o allure-report'
+                bat '"C:\\Users\\juhic\\Downloads\\allure-2.39.0\\bin\\allure.bat" generate allure-results --clean -o allure-report'
             }
         }
 
