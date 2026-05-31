@@ -7,11 +7,6 @@ pipeline {
         maven 'Maven'
     }
 
-    environment {
-
-        MAVEN_OPTS = '-Xmx1024m'
-    }
-
     stages {
 
         stage('Checkout Code') {
@@ -19,7 +14,7 @@ pipeline {
             steps {
 
                 git branch: 'main',
-                        url: 'https://github.com/juhii2004/NotesHybridAutomationFramework.git'
+                    url: 'https://github.com/juhii2004/NotesHybridAutomationFramework.git'
             }
         }
 
@@ -52,10 +47,10 @@ pipeline {
             steps {
 
                 archiveArtifacts artifacts: 'allure-report/**',
-                        fingerprint: true
+                        allowEmptyArchive: true
 
-                archiveArtifacts artifacts: 'test-output/**',
-                        fingerprint: true
+                archiveArtifacts artifacts: 'screenshots/**',
+                        allowEmptyArchive: true
             }
         }
 
@@ -77,7 +72,7 @@ pipeline {
             echo 'Execution Completed'
 
             junit allowEmptyResults: true,
-                  testResults: 'target/surefire-reports/*.xml'
+                    testResults: 'target/surefire-reports/*.xml'
         }
 
         success {
