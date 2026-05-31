@@ -43,7 +43,7 @@ pipeline {
 
             steps {
 
-                bat 'allure generate allure-results --clean -o allure-report'
+                bat '"C:\\allure\\bin\\allure.bat" generate allure-results --clean -o allure-report'
             }
         }
 
@@ -76,7 +76,8 @@ pipeline {
 
             echo 'Execution Completed'
 
-            junit 'test-output/junitreports/*.xml'
+            junit allowEmptyResults: true,
+                  testResults: 'target/surefire-reports/*.xml'
         }
 
         success {
