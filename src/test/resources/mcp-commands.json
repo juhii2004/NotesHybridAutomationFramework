@@ -1,0 +1,16 @@
+[
+  {
+    "action": "open",
+    "value": "https://practice.expandtesting.com/notes/app"
+  },
+  {
+    "action": "type",
+    "locator": "email",
+    "value": "juhi.chandurwar@gmail.com"
+  },
+  {
+    "action": "type",
+    "locator": "password",
+    "value": "Juhi@1234"
+  }
+]

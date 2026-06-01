@@ -29,6 +29,8 @@
 
             <class name="tests.PerformanceTest"/>
 
+            <class name="tests.McpExecutionTest"/>
+
         </classes>
 
     </test>
